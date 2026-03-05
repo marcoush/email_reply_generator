@@ -72,6 +72,18 @@ Adjust the parameters in the app.py if you want. I chose:
 
 
 
+In the app.py, you can also adjust the prompt:
+
+&nbsp;   prompt = f"""
+
+You are my personal email assistant ...
+
+...
+
+"""
+
+
+
 Before we can start the app, we need to load the AI Model (llama3.2:3b, around 2GB big and enough for this use case):
 
 docker-compose up -d ollama
@@ -80,9 +92,11 @@ docker exec -it ollama /bin/bash
 
 ollama pull llama3.2:3b
 
+-> this is a 2GB download that loads the ai model into the container (ephemeral!).
+
 ollama list 
 
--> should show it.
+-> should show up.
 
 
 
@@ -102,13 +116,14 @@ Start generating 🚀.
 
 
 
+---
+
 
 
 \# PS
 
-Sadly, I didn't manage to run the model on the GPU, therefore the CPU is under heavy bombardement for this task and might shoot up to 80%. But it works in around 40 seconds still and not too bad.
-
-
+* Sadly, I didn't manage to run the model on the GPU, therefore the CPU is under heavy bombardement for this task and might shoot up to 80%. But it works in around 40 seconds still and not too bad.
+* The "Flag" button has no effect.
 
 
 
