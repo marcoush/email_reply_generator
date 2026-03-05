@@ -1,3 +1,8 @@
+# Result
+
+![result](example_image.png)
+
+
 # Prerequisites
 
 Install Docker Desktop with WSL2 backend on Windows.
