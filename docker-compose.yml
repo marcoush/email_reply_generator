@@ -1,0 +1,16 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+
+  gradio_app:
+    build: ./gradio_app
+    container_name: gradio_app
+    ports:
+      - "7860:7860"
+    depends_on:
+      - ollama
+    restart: unless-stopped
